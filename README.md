@@ -1,158 +1,275 @@
-# Smart Interview App
-# AIRecruiter
+# 🤖 AIRecruiter – AI-Powered Voice Interview Platform
 
-AIRecruiter is an AI-powered recruitment assistant platform that streamlines candidate evaluation by conducting voice-based interviews, generating structured feedback, and maintaining conversation logs. It integrates Vapi AI for real-time voice conversations, Deepgram for transcription, and OpenAI GPT for intelligent feedback generation.
+![Next.js](https://img.shields.io/badge/Next.js-15-black?logo=next.js)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?logo=tailwindcss&logoColor=white)
+![OpenAI](https://img.shields.io/badge/OpenAI-GPT-412991?logo=openai)
+![Deepgram](https://img.shields.io/badge/Deepgram-Speech--to--Text-blue)
+![Vapi AI](https://img.shields.io/badge/Vapi-AI_Voice_Assistant-success)
+![License](https://img.shields.io/badge/License-MIT-green)
 
-## Table of Contents
+AIRecruiter is an AI-powered recruitment platform that automates technical and HR screening through intelligent voice interviews. It leverages **Vapi AI**, **Deepgram**, and **OpenAI GPT** to conduct natural conversations, transcribe responses in real time, and generate structured interview evaluations.
 
-- [Overview](#overview)
-- [Features](#features)
-- [Tech Stack](#tech-stack)
-- [Project Structure](#project-structure)
-- [Environment Variables](#environment-variables)
-- [Setup & Installation](#setup--installation)
-- [Running the Project](#running-the-project)
-- [How It Works](#how-it-works)
-- [API & SDK Integration](#api--sdk-integration)
-- [Notes & Recommendations](#notes--recommendations)
-- [License](#license)
+Designed to streamline the hiring process, AIRecruiter enables organizations to conduct scalable, consistent, and unbiased first-round interviews.
 
-## Overview
+---
 
-AIRecruiter automates the first stage of candidate interviews. It provides a voice-based AI interviewer that can:
+## ✨ Features
 
-- Greet candidates and explain the process.
-- Ask predefined or dynamic technical/HR questions.
-- Transcribe answers in real time.
-- Generate AI-driven interview summaries and feedback.
-- Save conversation history for future review.
+- 🎙️ AI-powered voice interviews using **Vapi AI**
+- 📝 Real-time speech transcription with **Deepgram**
+- 🤖 Intelligent interview evaluation using **OpenAI GPT**
+- 📊 Automated candidate feedback and interview summaries
+- 💬 Dynamic technical and HR interview flows
+- 📜 Structured interview conversation logs
+- ⚡ Modern responsive interface built with **Next.js** and **Tailwind CSS**
+- 🔧 Easily customizable interview roles and question sets
 
-The goal is to reduce human effort in screening candidates while maintaining structured, unbiased, and efficient evaluation.
+---
 
-## Features
+# 📸 Demo
 
-- 🎙 **Real-time voice interview via Vapi AI**
-- ✍ **Instant transcription with Deepgram**
-- 🤖 **AI-powered question & feedback generation using GPT models**
-- 📜 **Structured conversation logs for later review**
-- 🌐 **Modern web UI built with Next.js + Tailwind CSS**
-- 🛠 **Configurable interview topics (e.g., machine learning engineer, frontend developer, etc.)**
+> **Live Demo:** https://ai-recruiter-xi.vercel.app/
 
-## Tech Stack
+---
 
-**Frontend**
-- Next.js (React framework)
-- Tailwind CSS for styling
-- Shadcn/UI for UI components
-- Custom React Hooks (`useVapi`) for Vapi AI SDK integration
+# 🏗️ Tech Stack
 
-**Backend / AI Services**
-- Vapi AI Web SDK — Real-time AI voice conversation engine
-- Deepgram — Real-time transcription
-- OpenAI GPT — AI-generated responses & summaries
+### Frontend
 
-## Project Structure
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+- shadcn/ui
 
-```
-AIRecruiter-master/
-├── public/                  # Static assets
+### AI Services
+
+- Vapi AI
+- OpenAI GPT
+- Deepgram Speech-to-Text
+
+### Development Tools
+
+- Node.js
+- npm
+- ESLint
+- Git & GitHub
+
+---
+
+# 📂 Project Structure
+
+```text
+AIRecruiter/
+│
+├── public/
+│
 ├── src/
 │   ├── app/
-│   │   ├── interview/       # Interview page & logic
-│   │   └── page.tsx         # Landing page
-│   ├── components/          # UI components
+│   │   ├── interview/
+│   │   └── page.tsx
+│   │
+│   ├── components/
+│   │
 │   ├── hooks/
-│   │   └── useVapi.ts       # Custom hook for Vapi integration
+│   │   └── useVapi.ts
+│   │
 │   ├── context/
-│   │   └── InterviewContext.tsx  # Context for managing interview state
+│   │   └── InterviewContext.tsx
+│   │
 │   └── styles/
-├── .env.example             # Example environment file (create .env.local)
+│
+├── .env.example
 ├── package.json
 └── README.md
 ```
 
-## Environment Variables
+---
 
-Create a `.env.local` in the root directory with:
+# ⚙️ Environment Variables
+
+Create a `.env.local` file inside the project root.
 
 ```env
 NEXT_PUBLIC_VAPI_API_KEY=your_vapi_api_key
 NEXT_PUBLIC_VAPI_ASSISTANT_ID=your_vapi_assistant_id
-NEXT_PUBLIC_DEEPGRAM_API_KEY=your_deepgram_key
-NEXT_PUBLIC_OPENAI_API_KEY=your_openai_key
+NEXT_PUBLIC_DEEPGRAM_API_KEY=your_deepgram_api_key
+NEXT_PUBLIC_OPENAI_API_KEY=your_openai_api_key
 ```
 
-**Notes:**
-- `NEXT_PUBLIC_` prefix is required for frontend access.
-- Get keys from:
-    - Vapi AI dashboard (API key & assistant ID)
-    - Deepgram console
-    - OpenAI dashboard
+> **Important:** Never commit your `.env.local` file to GitHub.
 
-## Setup & Installation
+---
 
-Clone the repository:
+# 🚀 Getting Started
+
+## Clone the Repository
 
 ```bash
 git clone https://github.com/yourusername/AIRecruiter.git
-cd AIRecruiter-master
+
+cd AIRecruiter
 ```
 
-Install dependencies:
+## Install Dependencies
 
 ```bash
 npm install
 ```
 
-Setup environment variables:
-
-```bash
-cp .env.example .env.local
-# Fill in your API keys in .env.local
-```
-
-## Running the Project
-
-**Development mode:**
+## Run Development Server
 
 ```bash
 npm run dev
 ```
 
-Visit [http://localhost:3000](http://localhost:3000).
+Open your browser:
 
-**Build for production:**
+```
+http://localhost:3000
+```
+
+---
+
+# 🚀 Production Build
 
 ```bash
 npm run build
+
 npm start
 ```
 
-## How It Works
+---
 
-1. **Landing Page** — Candidate chooses an interview topic (e.g., "Machine Learning Engineer").
-2. **Interview Page** —
-     - Starts Vapi AI voice conversation with configured assistant.
-     - Deepgram transcribes candidate’s answers in real-time.
-     - OpenAI processes transcripts to generate follow-up questions and feedback.
-3. **Post-interview** —
-     - Conversation logs and AI feedback displayed to interviewer.
-     - (Optional) Save results to a database.
+# 🔄 Application Workflow
 
-## API & SDK Integration
+### 1. Select Interview
 
-- **Vapi AI**: Handles voice streaming between candidate and AI. Configured in `useVapi.ts` with API key & assistant ID.
-- **Deepgram**: Provides speech-to-text transcription. Integrated via Vapi AI’s transcription pipeline.
-- **OpenAI GPT**: Generates interview questions, summaries, and evaluations. Called from within the interview session after transcript chunks are received.
+The candidate selects an interview role such as:
 
-## Notes & Recommendations
+- Machine Learning Engineer
+- Software Engineer
+- Frontend Developer
+- Backend Developer
 
-- ✅ Add persistent storage (Supabase, MongoDB, etc.) to save interview history beyond current session.
-- ⚠ API keys are sensitive — never commit `.env.local` to source control.
-- 📈 You can add analytics for average interview length, completion rates, etc.
-- 🎯 Customizable interview flows — you can add HR, coding, or behavioral question sets.
+---
 
-## License
+### 2. AI Voice Interview
 
-This project is licensed under the MIT License.  
-See the [LICENSE](LICENSE) file for details.
+The AI interviewer:
+
+- Greets the candidate
+- Explains the interview process
+- Asks technical and behavioral questions
+- Maintains a natural conversation
+
+---
+
+### 3. Real-Time Transcription
+
+Deepgram converts candidate speech into text in real time.
+
+---
+
+### 4. AI Evaluation
+
+OpenAI GPT analyzes the responses to generate:
+
+- Candidate summary
+- Technical assessment
+- Communication evaluation
+- Overall interview feedback
+
+---
+
+### 5. Review Results
+
+Interviewers can review:
+
+- Complete transcript
+- AI-generated evaluation
+- Candidate performance summary
+
+---
+
+# 🔌 Integrations
+
+## Vapi AI
+
+- Voice conversation engine
+- AI assistant orchestration
+- Low-latency voice streaming
+
+## Deepgram
+
+- Speech-to-text transcription
+- Real-time transcript generation
+
+## OpenAI GPT
+
+- Interview question generation
+- Candidate evaluation
+- Intelligent interview summaries
+
+---
+
+# 📈 Future Improvements
+
+- Authentication
+- MongoDB/Supabase integration
+- Candidate dashboard
+- Recruiter dashboard
+- Interview analytics
+- PDF report generation
+- Email notifications
+- Multi-language interviews
+
+---
+
+# 💡 Key Highlights
+
+✔ AI-powered interview automation
+
+✔ Voice-first candidate experience
+
+✔ Real-time transcription
+
+✔ Intelligent candidate evaluation
+
+✔ Modular architecture
+
+✔ Production-ready deployment
+
+---
+
+# 👨‍💻 Author
+
+### **Hrushikesh Lomte**
+
+AI/ML Engineer | Computer Vision | Generative AI | Full Stack Developer
+
+🔗 **LinkedIn:**  
+
+
+💻 **GitHub:**  
+https://github.com/PrinceRushi07
+
+🌐 **Portfolio:**  
+https://ai-recruiter-xi.vercel.app/
+
+---
+
+# ⭐ Support
+
+If you found this project useful, please consider giving it a **Star ⭐** on GitHub.
+
+It helps others discover the project and motivates further development.
+
+---
+
+# 📄 License
+
+This project is licensed under the **MIT License**.
+
+See the **LICENSE** file for more details.
