@@ -250,7 +250,7 @@ Interviewers can review:
 AI/ML Engineer | Computer Vision | Generative AI | Full Stack Developer
 
 🔗 **LinkedIn:**  
-
+https://www.linkedin.com/in/hrushikesh-lomte-b2a611281/
 
 💻 **GitHub:**  
 https://github.com/PrinceRushi07
